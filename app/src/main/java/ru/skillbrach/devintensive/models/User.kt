@@ -23,8 +23,8 @@ data class User (
     constructor(id: String) : this(id,"John" ,"Doe")
 
     init {
-//        println("It's Alive!!! \n" +
-//                "${if(lastName==="Doe") "His name id $firstName $lastName" else "And his name is  $firstName $lastName !!!"}\n" )
+        println("It's Alive!!! \n" +
+                "${if(lastName==="Doe") "His name id $firstName $lastName" else "And his name is  $firstName $lastName !!!"}\n" )
     }
 
     companion object Factory {
@@ -32,11 +32,7 @@ data class User (
         fun makeUser(fullName:String?) : User {
             lastId++
 
-            val parts : List<String>? = fullName?.split(" ")
-
-            val firstName = parts?.getOrNull(0)
-            val lastName = parts?.getOrNull(1)
-//            val (firstName, lastName) = Utils.parseFullName(fullName)
+            val (firstName, lastName) = Utils.parseFullName(fullName)
 
             return User(id = "$lastId", firstName = firstName, lastName = lastName  )
         }
