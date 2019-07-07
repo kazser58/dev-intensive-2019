@@ -10,7 +10,7 @@ object Utils {
         if (firstName == "") firstName = null
         if (lastName == "") lastName = null
 
-
         return firstName to lastName
+
     }
 }

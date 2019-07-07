@@ -5,5 +5,6 @@ class Chat (
     val members:MutableList<User> = mutableListOf(),
     val massages:MutableList<BaseMessage> = mutableListOf()
 )
+
 {
 }

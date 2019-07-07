@@ -25,11 +25,12 @@ class ExampleUnitTest {
 
         val user2 = User("2", "John","Cena")
 
+
     }
 
     @Test
     fun test_factory() {
-        val user = User.makeUser("John")
+        val user = User.makeUser("John Wick")
         var user2 = user.copy("1", lastName = "Cena" , lastVisit = Date().add(2, TimeUnits.HOUR))
         var user3 = user.copy("2", lastName = "Wick" , lastVisit = Date().add(-2, TimeUnits.SECOND))
         print("""
@@ -37,7 +38,6 @@ class ExampleUnitTest {
             ${user3.lastVisit?.format()}
             """ .trimIndent())
     }
-
 
     @Test
     fun test_abstract_factory(){
