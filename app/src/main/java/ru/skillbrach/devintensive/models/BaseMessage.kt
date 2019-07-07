@@ -21,7 +21,7 @@ abstract class BaseMessage(
             lastId++
             return when(type) {
                 "image" -> ImageMassage("$lastId", from, chat, date = date, image = payload as String)
-                    else -> TestMassage("$lastId", from, chat, date = date, text = payload as String)
+                    else -> TextMassage("$lastId", from, chat, date = date, text = payload as String)
             }
         }
     }

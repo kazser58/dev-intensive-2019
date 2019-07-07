@@ -2,7 +2,7 @@ package ru.skillbrach.devintensive.models
 
 import java.util.*
 
-class TestMassage(
+class TextMassage(
     id:String,
     from:User?,
     chat:Chat,
