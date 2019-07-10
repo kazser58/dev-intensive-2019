@@ -1,8 +1,4 @@
-import ru.skillbranch.devintensive.models.BaseMessage
-import ru.skillbranch.devintensive.models.Chat
-import ru.skillbranch.devintensive.models.User
-
-pacpackage ru.skillbranch.devintensive.models
+package ru.skillbranch.devintensive.models
 
 import ru.skillbranch.devintensive.extensions.humanizeDiff
 import java.util.*
