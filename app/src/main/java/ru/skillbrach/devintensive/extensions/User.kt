@@ -1,23 +1,19 @@
-package ru.skillbrach.devintensive.extensions
+package ru.skillbranch.devintensive.extensions
 
-import ru.skillbrach.devintensive.models.User
-import ru.skillbrach.devintensive.models.UserView
-import java.util.*
+import ru.skillbranch.devintensive.models.User
+import ru.skillbranch.devintensive.models.UserView
+import ru.skillbranch.devintensive.utils.Utils
 
-fun User.toUserView() : UserView{
-    val nickName = ""
-    val initials = ""
-    val status = if (lastVisit == null) "Еще не разу не был" else if (isOnline) "online" else "Последний раз был "
-
-            //${lastVisit.humanizeDiff()}"
+fun User.toUserView(): UserView {
+    var nickName = Utils.transliteration("$firstName $lastName")
+    var initials = Utils.toInitials(firstName, lastName)
+    var status = if (lastVisit == null) "Еще ни разу не был" else if (isOnline) "online" else "Последний раз был ${lastVisit?.humanizeDiff()}"
 
     return UserView(
-        id,
+        id = id,
         fullName = "$firstName $lastName",
-        avatar = avatar,
-        nicName = nickName,
-        initials = initials,
-        status = status)
+        nickName = nickName,
+        avatarName = null,
+        status = status,
+        initials = initials)
 }
-
-//private fun Date.humanizeDiff(date:Date): String { }

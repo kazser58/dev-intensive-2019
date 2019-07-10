@@ -1,11 +1,20 @@
-package ru.skillbrach.devintensive.models
+package ru.skillbranch.devintensive.models
 
-class UserView(
-        val id: String,
-        val fullName:String,
-        val nicName:String,
-        var avatar:String? = null,
-        var status:String? = "offline",
-        val initials:String?
-
-)
+class UserView (val id: String,
+                val fullName: String,
+                val nickName: String,
+                val avatarName: String? = null,
+                val status: String? = "offline",
+                val initials: String?
+) {
+        fun printMe() {
+                println("""
+        $id
+        $fullName
+        $nickName
+        $avatarName
+        $status
+        $initials
+        """)
+        }
+}
